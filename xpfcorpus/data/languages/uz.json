@@ -388,6 +388,19 @@
             "weight": 4.0
           },
           {
+            "from": "ц",
+            "to": "t s",
+            "weight": 1.0,
+            "comment": "ц is loadwords from Russian"
+          },
+          {
+            "from": "ь",
+            "to": "",
+            "weight": 1.0,
+            "follow": "$",
+            "comment": "erase word-final soft sign (in loanwords from Russian)"
+          },
+          {
             "from": "-",
             "to": "",
             "weight": 4.0,
