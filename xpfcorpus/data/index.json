@@ -1,0 +1,1213 @@
+{
+  "aak": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "aau": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ab": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "acf": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "aey": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "agg": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "aia": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "amn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "an": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "aom": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "apu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "apy": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "arl": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ast": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ata": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "avt": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ay": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "az": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ba": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "bdd": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "be": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "bef": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bg": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "bi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "boa": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "boj": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bug": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bvr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bxr": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "caa": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "car": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cbi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cbk": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cbt": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cbu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cnm": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "crh": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cs": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ctu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cv": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "ded": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "dgz": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "djr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "dv": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "el": {
+    "scripts": [
+      "greek"
+    ],
+    "default": "greek"
+  },
+  "emi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "eu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "gaw": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ghs": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "gil": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "gn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "guc": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "guo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "gvn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "haw": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hil": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hmn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hsb": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ht": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hy": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ign": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ilo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "inb": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "iu": {
+    "scripts": [
+      "latin",
+      "syllabics"
+    ],
+    "default": null
+  },
+  "iws": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "jam": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "jv": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ka": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kbd": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "kjb": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kki": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kl": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ko": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kpf": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kpx": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "krc": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "ksr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kup": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kv": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "ky": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "lem": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mam": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mcq": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mg": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mhl": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mk": {
+    "scripts": [
+      "cyrillic",
+      "latin"
+    ],
+    "default": "cyrillic"
+  },
+  "mqj": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mto": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mva": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "naf": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nan": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nas": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nhe": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nhr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nsn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "nuy": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "omw": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "pad": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "pau": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "pio": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "pwg": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "quz": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "rkb": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "roo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ro": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "shi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "shp": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "si": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "snc": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "sq": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tac": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ta": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "te": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tee": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tg": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "to": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tpi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tt": {
+    "scripts": [
+      "cyrillic",
+      "latin"
+    ],
+    "default": null
+  },
+  "tyv": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "tzo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ug": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "uk": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "usa": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "uz": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "var": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "viv": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "vi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "way": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "wbp": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "wo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ycn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "yi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "yua": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "yuz": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "yva": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "zos": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "acr": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ake": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "amp": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "aoj": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "arn": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ar": {
+    "scripts": [
+      "arabic"
+    ],
+    "default": "arabic"
+  },
+  "awx": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bcl": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bmu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "btx": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bzd": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "bzh": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ca": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cav": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "chf": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "chm": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "cho": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cni": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "cof": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "con": {
+    "scripts": [
+      "latin",
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "crm": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "dyo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "es": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "fuv": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "hi": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "id": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ixl": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kea": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kek": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kk": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "kmo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "kyz": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mcf": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mek": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mfe": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "ml": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mlp": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mnb": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mpx": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "mt": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "myv": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "ne": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "not": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "or": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "os": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "pag": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "pib": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "plu": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "qub": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "rwo": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "sah": {
+    "scripts": [
+      "cyrillic"
+    ],
+    "default": "cyrillic"
+  },
+  "sk": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "sm": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "suz": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "sw": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "too": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tpp": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tzj": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "tzm": {
+    "scripts": [
+      "latin",
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "wmw": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "zsm": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  },
+  "zza": {
+    "scripts": [
+      "latin"
+    ],
+    "default": "latin"
+  }
+}

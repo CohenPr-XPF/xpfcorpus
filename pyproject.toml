@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xpfcorpus"
+version = "0.1.0"
+description = "XPF Corpus grapheme-to-phoneme translator"
+authors = [{name = "Uriel Cohen Priva", email = "uriel_cohen_priva@brown.edu"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+keywords = ["linguistics", "phonetics", "phonology", "grapheme-to-phoneme", "g2p", "IPA"]
+
+# No required dependencies - pure Python!
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6.0"]
+
+[project.scripts]
+xpfcorpus = "xpfcorpus.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/CohenPr-XPF/xpfcorpus"
+Documentation = "https://cohenpr-xpf.github.io/XPF/"
+Repository = "https://github.com/CohenPr-XPF/xpfcorpus"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+"xpfcorpus.data" = ["index.json"]
+"xpfcorpus.data.languages" = ["*.json"]
