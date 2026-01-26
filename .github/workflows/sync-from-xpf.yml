@@ -1,0 +1,48 @@
+name: Sync from XPF Corpus
+
+on:
+  workflow_dispatch:  # manual trigger from GitHub Actions tab
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout xpfcorpus
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Clone XPF corpus
+        run: git clone --depth 1 https://github.com/CohenPr-XPF/XPF.git /tmp/XPF
+
+      - name: Regenerate JSON files
+        run: |
+          python3 convert_to_yaml.py --generate-index \
+            /tmp/XPF/Data/langs-list.tsv /tmp/XPF/Data \
+            > xpfcorpus/data/index.json
+
+          python3 convert_to_yaml.py --all --format json _ \
+            /tmp/XPF/Data/langs-list.tsv /tmp/XPF/Data \
+            xpfcorpus/data/languages
+
+      - name: Install and verify
+        run: |
+          pip install -e .
+          xpfcorpus verify --all
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Sync with XPF corpus"
+          title: "Sync with XPF corpus"
+          body: |
+            Automated sync from [CohenPr-XPF/XPF](https://github.com/CohenPr-XPF/XPF).
+
+            Verification passed (203/203).
+          branch: sync-xpf
+          delete-branch: true
