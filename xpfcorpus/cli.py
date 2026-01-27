@@ -13,6 +13,19 @@ from .io.repository import PackageRepository
 from .translator import Translator, available_languages
 
 
+def _iter_words_from_file(fileobj) -> list[str]:
+    """Extract first word from each line of a file."""
+    words = []
+    for line in fileobj:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        # Extract first word (split on whitespace or comma)
+        word = line.replace(",", " ").split()[0]
+        words.append(word)
+    return words
+
+
 def cmd_translate(args: argparse.Namespace) -> int:
     """Translate words to phonemes."""
     try:
@@ -30,7 +43,26 @@ def cmd_translate(args: argparse.Namespace) -> int:
             verify_file=verify_file,
         )
 
-        for word in args.words:
+        # Collect words from all sources
+        words = list(args.words) if args.words else []
+
+        # Read from file if specified
+        if args.file:
+            if args.file == "-":
+                words.extend(_iter_words_from_file(sys.stdin))
+            else:
+                with open(args.file, "r", encoding="utf-8") as f:
+                    words.extend(_iter_words_from_file(f))
+
+        # If no words and no file, read from stdin
+        if not words and not args.file and not sys.stdin.isatty():
+            words.extend(_iter_words_from_file(sys.stdin))
+
+        if not words:
+            print("Error: No words to translate. Provide words as arguments, use -f FILE, or pipe to stdin.", file=sys.stderr)
+            return 1
+
+        for word in words:
             phonemes = translator.translate(word)
             if args.json:
                 print(json.dumps({"word": word, "phonemes": phonemes}))
@@ -193,8 +225,13 @@ def main(argv: Optional[list[str]] = None) -> int:
     )
     translate_parser.add_argument(
         "words",
-        nargs="+",
-        help="Words to translate",
+        nargs="*",
+        help="Words to translate (can also use -f FILE or stdin)",
+    )
+    translate_parser.add_argument(
+        "-f", "--file",
+        metavar="FILE",
+        help="Read words from FILE (use '-' for stdin). Extracts first word from each line.",
     )
     translate_parser.add_argument(
         "-s", "--script",

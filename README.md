@@ -8,38 +8,65 @@ A Python package for grapheme-to-phoneme translation based on the [XPF Corpus](h
 pip install xpfcorpus
 ```
 
-## Usage
+## Python API
 
 ```python
-from xpfcorpus import translator, available_languages
+from xpfcorpus import Translator, available_languages
+
+# Basic usage - languages with a default script
+es = Translator("es")
+es.translate("ejemplo")  # ['e', 'x', 'e', 'm', 'p', 'l', 'o']
+
+# Languages with multiple scripts require explicit script choice
+tt_latin = Translator("tt", "latin")
+tt_cyrillic = Translator("tt", "cyrillic")
+
+# Skip verification on load
+es = Translator("es", verify=False)
 
 # List available languages
-print(available_languages())  # ['aak', 'aau', 'ab', ..., 'yi-Latn', ...]
+available_languages()
+# {"es": {"scripts": ["latin"], "default": "latin"},
+#  "tt": {"scripts": ["latin", "cyrillic"], "default": None}, ...}
+```
 
-# Create a translator for a specific language
-es = translator("es")
+## Command-Line Interface
 
-# Translate a word to phonemes
-phonemes = es.translate("ejemplo")
-print(phonemes)  # ['e', 'x', 'e', 'm', 'p', 'l', 'o']
+```bash
+# Translate words
+xpfcorpus translate es ejemplo hola mundo
 
-# Languages with multiple scripts use hyphenated codes
-tatar_latin = translator("tt-latn")
-tatar_cyrillic = translator("tt-cyrillic")
+# Translate from file (extracts first word from each line)
+xpfcorpus translate es -f words.txt
 
-# With verification (raises ValueError if verification fails)
-es_verified = translator("es", verify=True)
+# Translate from stdin
+echo -e "mundo\nbueno" | xpfcorpus translate es
+cat words.txt | xpfcorpus translate es -f -
+
+# Combine command-line words and file
+xpfcorpus translate es ejemplo hola -f more_words.txt
+
+# List available languages
+xpfcorpus list
+xpfcorpus list --json
+
+# Export language rules as YAML
+xpfcorpus export es
+xpfcorpus export es -o spanish.yaml
+
+# Verify language rules
+xpfcorpus verify es -v
+xpfcorpus verify --all
 ```
 
 ## Supported Languages
 
-The package includes rules for 207 language/script combinations across 140 language families. Some languages have multiple scripts:
+The package includes rules for 201 languages with 203 language/script combinations. Some languages have multiple scripts:
 
-- `iu-Latn`, `iu-Syll` (Inuktitut: Latin, Syllabics)
-- `tt-latn`, `tt-cyrillic` (Tatar)
-- `yi-Latn` (Yiddish in Latin script)
+- `iu` (Inuktitut): latin, syllabics
+- `tt` (Tatar): latin, cyrillic
 
-See `available_languages()` for the full list.
+Use `xpfcorpus list` or `available_languages()` for the full list.
 
 ## Citation
 
