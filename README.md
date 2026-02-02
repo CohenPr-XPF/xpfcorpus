@@ -1,5 +1,7 @@
 # xpfcorpus
 
+[![Documentation Status](https://readthedocs.org/projects/xpfcorpus/badge/?version=latest)](https://xpfcorpus.readthedocs.io/en/latest/?badge=latest)
+
 A Python package for grapheme-to-phoneme transcription based on the [XPF Corpus](https://cohenpr-xpf.github.io/XPF/).
 
 **Documentation:** [xpfcorpus.readthedocs.io](https://xpfcorpus.readthedocs.io/)
