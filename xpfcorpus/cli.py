@@ -10,7 +10,7 @@ from typing import Optional
 
 from .exceptions import XPFCorpusError
 from .io.repository import PackageRepository
-from .translator import Translator, available_languages
+from .translator import Transcriber, available_languages
 
 
 def _iter_words_from_file(fileobj) -> list[str]:
@@ -26,15 +26,15 @@ def _iter_words_from_file(fileobj) -> list[str]:
     return words
 
 
-def cmd_translate(args: argparse.Namespace) -> int:
-    """Translate words to phonemes."""
+def cmd_transcribe(args: argparse.Namespace) -> int:
+    """Transcribe words to phonemes."""
     try:
         # Determine data source
         yaml_file = Path(args.yaml) if args.yaml else None
         rules_file = Path(args.rules) if args.rules else None
         verify_file = Path(args.verify_file) if args.verify_file else None
 
-        translator = Translator(
+        transcriber = Transcriber(
             args.language,
             args.script,
             verify=not args.no_verify,
@@ -59,11 +59,11 @@ def cmd_translate(args: argparse.Namespace) -> int:
             words.extend(_iter_words_from_file(sys.stdin))
 
         if not words:
-            print("Error: No words to translate. Provide words as arguments, use -f FILE, or pipe to stdin.", file=sys.stderr)
+            print("Error: No words to transcribe. Provide words as arguments, use -f FILE, or pipe to stdin.", file=sys.stderr)
             return 1
 
         for word in words:
-            phonemes = translator.translate(word)
+            phonemes = transcriber.transcribe(word)
             if args.json:
                 print(json.dumps({"word": word, "phonemes": phonemes}))
             else:
@@ -145,8 +145,8 @@ def cmd_verify(args: argparse.Namespace) -> int:
         for lang, script in to_verify:
             try:
                 # Load without verification to check manually
-                translator = Translator(lang, script, verify=False)
-                passed, errors = translator.verify()
+                transcriber = Transcriber(lang, script, verify=False)
+                passed, errors = transcriber.verify()
 
                 label = f"{lang}-{script}" if script else lang
                 status = "PASS" if passed else "FAIL"
@@ -204,7 +204,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     """Main entry point for the CLI."""
     parser = argparse.ArgumentParser(
         prog="xpfcorpus",
-        description="XPF Corpus grapheme-to-phoneme translator",
+        description="XPF Corpus grapheme-to-phoneme transcriber",
     )
     parser.add_argument(
         "--version",
@@ -214,55 +214,55 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    # translate command
-    translate_parser = subparsers.add_parser(
-        "translate",
-        help="Translate words to phonemes",
+    # transcribe command
+    transcribe_parser = subparsers.add_parser(
+        "transcribe",
+        help="Transcribe words to phonemes",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "language",
-        help="Language code (e.g., 'es', 'tt')",
+        help="Language code (e.g., 'es', 'tt'). Supports BCP-47 style codes with script/region (e.g., 'es-ES', 'yi-Latn', 'tt-cyrillic')",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "words",
         nargs="*",
-        help="Words to translate (can also use -f FILE or stdin)",
+        help="Words to transcribe (can also use -f FILE or stdin)",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "-f", "--file",
         metavar="FILE",
         help="Read words from FILE (use '-' for stdin). Extracts first word from each line.",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "-s", "--script",
         help="Script to use (e.g., 'latin', 'cyrillic')",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "--yaml",
         metavar="FILE",
         help="Use external YAML file",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "--rules",
         metavar="FILE",
         help="Use legacy .rules file",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "--verify-file",
         metavar="FILE",
         help="Use legacy .verify file",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "--no-verify",
         action="store_true",
         help="Skip verification",
     )
-    translate_parser.add_argument(
+    transcribe_parser.add_argument(
         "--json",
         action="store_true",
         help="Output as JSON",
     )
-    translate_parser.set_defaults(func=cmd_translate)
+    transcribe_parser.set_defaults(func=cmd_transcribe)
 
     # list command
     list_parser = subparsers.add_parser(

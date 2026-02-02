@@ -1,18 +1,18 @@
 """
-xpfcorpus - XPF Corpus grapheme-to-phoneme translator
+xpfcorpus - XPF Corpus grapheme-to-phoneme transcriber
 
-A Python package for grapheme-to-phoneme translation based on the XPF Corpus.
+A Python package for grapheme-to-phoneme transcription based on the XPF Corpus.
 
 Example usage:
-    >>> from xpfcorpus import Translator, available_languages
+    >>> from xpfcorpus import Transcriber, available_languages
     >>>
     >>> # Basic usage - language with default script
-    >>> es = Translator("es")
-    >>> es.translate("ejemplo")
+    >>> es = Transcriber("es")
+    >>> es.transcribe("ejemplo")
     ['e', 'x', 'e', 'm', 'p', 'l', 'o']
     >>>
     >>> # Multi-script language (requires explicit script)
-    >>> tt = Translator("tt", "cyrillic")
+    >>> tt = Transcriber("tt", "cyrillic")
     >>>
     >>> # List available languages
     >>> langs = available_languages()
@@ -20,7 +20,7 @@ Example usage:
     True
 """
 
-from .translator import Translator, available_languages
+from .translator import Transcriber, available_languages
 from .exceptions import (
     XPFCorpusError,
     LanguageNotFoundError,
@@ -32,7 +32,7 @@ from .exceptions import (
 __version__ = "0.1.0"
 
 __all__ = [
-    "Translator",
+    "Transcriber",
     "available_languages",
     "XPFCorpusError",
     "LanguageNotFoundError",

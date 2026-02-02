@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "xpfcorpus"
 version = "0.1.0"
-description = "XPF Corpus grapheme-to-phoneme translator"
+description = "XPF Corpus grapheme-to-phoneme transcriber"
 authors = [{name = "Uriel Cohen Priva", email = "uriel_cohen_priva@brown.edu"}]
 readme = "README.md"
 license = {text = "MIT"}
@@ -29,14 +29,16 @@ dependencies = []
 
 [project.optional-dependencies]
 yaml = ["pyyaml>=6.0"]
+docs = ["sphinx>=7.0", "sphinx-rtd-theme>=2.0"]
 
 [project.scripts]
 xpfcorpus = "xpfcorpus.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/CohenPr-XPF/xpfcorpus"
-Documentation = "https://cohenpr-xpf.github.io/XPF/"
+Documentation = "https://xpfcorpus.readthedocs.io/"
 Repository = "https://github.com/CohenPr-XPF/xpfcorpus"
+"XPF Corpus" = "https://cohenpr-xpf.github.io/XPF/"
 
 [tool.setuptools.packages.find]
 where = ["."]

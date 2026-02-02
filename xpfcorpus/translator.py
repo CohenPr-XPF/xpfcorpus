@@ -1,11 +1,11 @@
-"""High-level Translator facade for xpfcorpus."""
+"""High-level Transcriber facade for xpfcorpus."""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Optional
 
-from .engine.processor import TranslationProcessor
+from .engine.processor import TranscriptionProcessor
 from .engine.rules import LanguageData, ScriptData
 from .exceptions import (
     LanguageNotFoundError,
@@ -13,13 +13,14 @@ from .exceptions import (
     ScriptRequiredError,
     VerificationError,
 )
+from .io.language_code import parse_language_code
 from .io.legacy_loader import LegacyLoader
 from .io.repository import PackageRepository
 
 
-class Translator:
+class Transcriber:
     """
-    High-level grapheme-to-phoneme translator.
+    High-level grapheme-to-phoneme transcriber.
 
     Supports multiple data sources:
     - Package repository (default): bundled JSON data
@@ -28,18 +29,18 @@ class Translator:
 
     Examples:
         # Basic usage - language with default script
-        >>> es = Translator("es")
-        >>> es.translate("ejemplo")
+        >>> es = Transcriber("es")
+        >>> es.transcribe("ejemplo")
         ['e', 'x', 'e', 'm', 'p', 'l', 'o']
 
         # Explicit script
-        >>> tt = Translator("tt", "cyrillic")
+        >>> tt = Transcriber("tt", "cyrillic")
 
         # External YAML file
-        >>> custom = Translator("custom", yaml_file="my_lang.yaml")
+        >>> custom = Transcriber("custom", yaml_file="my_lang.yaml")
 
         # Legacy format
-        >>> legacy = Translator("test", rules_file="es.rules")
+        >>> legacy = Transcriber("test", rules_file="es.rules")
     """
 
     def __init__(
@@ -53,37 +54,51 @@ class Translator:
         verify_file: Optional[Path | str] = None,
     ):
         """
-        Initialize a Translator for a language.
+        Initialize a Transcriber for a language.
 
         Args:
             language: Language code (e.g., "es", "tt", "aak").
+                     Supports BCP-47 style codes with script and region:
+                     - "es-ES" (region preserved, treated as variant)
+                     - "yi-Latn" (script extracted)
+                     - "tt-cyrillic" (script extracted)
+                     - "zh-Hans-CN" (script extracted, region preserved)
             script: Script to use (e.g., "latin", "cyrillic").
                     Required for multi-script languages without a default.
+                    If provided, overrides any script in the language code.
             verify: If True, verify the rules on initialization.
                     Raises VerificationError if verification fails.
             yaml_file: Path to an external YAML file (requires PyYAML).
             rules_file: Path to a legacy .rules file.
             verify_file: Path to a legacy .verify file.
         """
-        self._language = language
+        # Parse language code to extract language, script, and region
+        parsed_lang, parsed_script, parsed_region = parse_language_code(language, script)
+
+        # Use explicit script if provided, otherwise use parsed script
+        effective_script = script if script is not None else parsed_script
+
+        self._language = parsed_lang
+        self._variant: Optional[str] = parsed_region  # Store variant (region code)
+        self._original_code = language  # Store original for reference
         self._script: Optional[str] = None
         self._lang_data: Optional[LanguageData] = None
         self._script_data: Optional[ScriptData] = None
-        self._processor: Optional[TranslationProcessor] = None
+        self._processor: Optional[TranscriptionProcessor] = None
 
         # Load data from the appropriate source
         if yaml_file is not None:
-            self._load_from_yaml(yaml_file, script)
+            self._load_from_yaml(yaml_file, effective_script)
         elif rules_file is not None:
             self._load_from_legacy(rules_file, verify_file)
         else:
-            self._load_from_repository(language, script)
+            self._load_from_repository(parsed_lang, effective_script, parsed_region)
 
         # Verify if requested
         if verify and self._script_data and self._script_data.verify:
             passed, errors = self._processor.verify(self._script_data.verify)
             if not passed:
-                raise VerificationError(language, errors)
+                raise VerificationError(parsed_lang, errors)
 
     def _load_from_yaml(
         self,
@@ -112,8 +127,39 @@ class Translator:
         self,
         language: str,
         script: Optional[str],
+        region: Optional[str] = None,
     ) -> None:
-        """Load from the package repository."""
+        """
+        Load from the package repository.
+
+        Tries to load variant-specific file (e.g., es-ES.json) first if region
+        is provided, then falls back to base language (e.g., es.json) with a warning.
+        When falling back, sets self._variant to None.
+        """
+        import warnings
+
+        # Try to load variant first if region is specified
+        if region is not None:
+            variant_code = f"{language}-{region}"
+            if PackageRepository.has_language(variant_code):
+                self._lang_data = PackageRepository.load_language(variant_code)
+                self._resolve_script(script)
+                self._init_processor()
+                # Variant successfully loaded, keep self._variant as-is
+                return
+
+            # Variant not found, fall back to base language with warning
+            warnings.warn(
+                f"Language variant '{variant_code}' not found. "
+                f"Falling back to base language '{language}'. "
+                f"To create a variant, add {variant_code}.json to the data/languages directory.",
+                UserWarning,
+                stacklevel=3
+            )
+            # Clear variant since we're falling back to base language
+            self._variant = None
+
+        # Load base language
         if not PackageRepository.has_language(language):
             available = list(PackageRepository.available_languages().keys())
             raise LanguageNotFoundError(language, available)
@@ -149,23 +195,23 @@ class Translator:
         self._script_data = self._lang_data.scripts[self._script]
 
     def _init_processor(self) -> None:
-        """Initialize the translation processor."""
+        """Initialize the transcription processor."""
         if self._script_data is not None:
-            self._processor = TranslationProcessor(self._script_data.rules)
+            self._processor = TranscriptionProcessor(self._script_data.rules)
 
-    def translate(self, word: str) -> list[str]:
+    def transcribe(self, word: str) -> list[str]:
         """
-        Translate a word from graphemes to phonemes.
+        Transcribe a word from graphemes to phonemes.
 
         Args:
-            word: The word to translate.
+            word: The word to transcribe.
 
         Returns:
             List of phoneme strings.
         """
         if self._processor is None:
             return []
-        return self._processor.translate(word)
+        return self._processor.transcribe(word)
 
     def verify(self) -> tuple[bool, list[str]]:
         """
@@ -187,6 +233,28 @@ class Translator:
     def script(self) -> Optional[str]:
         """The script being used."""
         return self._script
+
+    @property
+    def variant(self) -> Optional[str]:
+        """
+        The language variant (region code) if a variant file was loaded.
+
+        Returns:
+            Region code (e.g., "ES", "MX") if variant file exists, otherwise None.
+
+        Examples:
+            >>> es = Transcriber("es")
+            >>> es.variant  # None (base language)
+            >>>
+            >>> # If es-ES.json exists:
+            >>> es_es = Transcriber("es-ES")
+            >>> es_es.variant  # "ES"
+            >>>
+            >>> # If es-ES.json doesn't exist (falls back to es.json):
+            >>> es_es = Transcriber("es-ES")
+            >>> es_es.variant  # None
+        """
+        return self._variant
 
     @property
     def name(self) -> str:
@@ -211,7 +279,7 @@ class Translator:
 
     def __repr__(self) -> str:
         script_part = f", script={self._script!r}" if self._script else ""
-        return f"Translator({self._language!r}{script_part})"
+        return f"Transcriber({self._language!r}{script_part})"
 
 
 def available_languages() -> dict[str, dict]:

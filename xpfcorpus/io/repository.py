@@ -55,8 +55,25 @@ class PackageRepository:
 
     @classmethod
     def has_language(cls, code: str) -> bool:
-        """Check if a language is available."""
-        return code in cls._get_index()
+        """
+        Check if a language is available.
+
+        Checks both the index and the filesystem for language files.
+        This allows variants (e.g., es-ES.json) to exist without being in index.json.
+        """
+        # First check the index
+        if code in cls._get_index():
+            return True
+
+        # Also check if the file exists (for variants not in index)
+        try:
+            files = resources.files("xpfcorpus.data.languages")
+            lang_file = files.joinpath(f"{code}.json")
+            # Try to read to check if it exists
+            _ = lang_file.read_text(encoding="utf-8")
+            return True
+        except (FileNotFoundError, AttributeError, TypeError):
+            return False
 
     @classmethod
     def get_scripts(cls, code: str) -> list[str]:

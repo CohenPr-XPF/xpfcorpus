@@ -1,4 +1,4 @@
-"""Engine layer for xpfcorpus - pure translation logic with no I/O."""
+"""Engine layer for xpfcorpus - pure transcription logic with no I/O."""
 
 from .rules import (
     SubRule,
@@ -7,7 +7,7 @@ from .rules import (
     ScriptData,
     LanguageData,
 )
-from .processor import TranslationProcessor
+from .processor import TranscriptionProcessor
 
 __all__ = [
     "SubRule",
@@ -15,5 +15,5 @@ __all__ = [
     "VerifyEntry",
     "ScriptData",
     "LanguageData",
-    "TranslationProcessor",
+    "TranscriptionProcessor",
 ]

@@ -1,4 +1,4 @@
-"""Translation processor - the core algorithm adapted from translate04.py."""
+"""Transcription processor - the core algorithm adapted from translate04.py."""
 
 from __future__ import annotations
 
@@ -8,11 +8,11 @@ from typing import Optional
 from .rules import RuleSet, SubRule, VerifyEntry
 
 
-class TranslationProcessor:
+class TranscriptionProcessor:
     """
-    Core translation engine that converts graphemes to phonemes.
+    Core transcription engine that converts graphemes to phonemes.
 
-    This is a pure translation class with no I/O operations.
+    This is a pure transcription class with no I/O operations.
     The algorithm is adapted from XPF Corpus's translate04.py.
     """
 
@@ -21,8 +21,8 @@ class TranslationProcessor:
         Initialize the processor with a rule set.
 
         Args:
-            rules: The RuleSet containing all translation rules.
-            missing: Character to use for untranslatable graphemes.
+            rules: The RuleSet containing all transcription rules.
+            missing: Character to use for untranscribable graphemes.
         """
         self.rules = rules
         self.missing = missing
@@ -35,15 +35,15 @@ class TranslationProcessor:
                 sto = sto.format(**rules.classes)
             self._matches[sfrom] = sto
 
-        # Build pre-translation table
+        # Build pre-transcription table
         self._pre_table = rules.get_pre_translation_table()
 
-    def translate(self, word: str) -> list[str]:
+    def transcribe(self, word: str) -> list[str]:
         """
-        Translate a word from graphemes to phonemes.
+        Transcribe a word from graphemes to phonemes.
 
         Args:
-            word: The word to translate.
+            word: The word to transcribe.
 
         Returns:
             List of phoneme strings.
@@ -52,7 +52,7 @@ class TranslationProcessor:
         if word in self.rules.words:
             return self.rules.words[word].copy()
 
-        # Preprocess: apply pre-translation and lowercase
+        # Preprocess: apply pre-transcription and lowercase
         source = word.translate(self._pre_table).lower()
 
         # Process character by character
@@ -62,28 +62,28 @@ class TranslationProcessor:
         for idx, char in enumerate(source_chars):
             # If there's a direct match rule, use it (skip regex matching)
             if char in self._matches:
-                translation = self._matches[char]
+                transcription = self._matches[char]
             else:
                 # Prepare context for rule matching
                 precede = source[:idx]
                 follow = source[idx + 1:]
 
                 # Find all matching rules with their weights
-                translations = []
+                transcriptions = []
                 for rule in self.rules.subs:
                     weight = rule.matches(char, precede, follow)
                     if weight is not None:
-                        translations.append((weight, rule.substitute(char)))
+                        transcriptions.append((weight, rule.substitute(char)))
 
-                # Choose the highest-weight translation
-                if translations:
-                    translation = sorted(translations)[-1][1]
+                # Choose the highest-weight transcription
+                if transcriptions:
+                    transcription = sorted(transcriptions)[-1][1]
                 else:
-                    translation = self.missing
+                    transcription = self.missing
 
-            # Skip empty translations
-            if translation:
-                target_list.append(translation)
+            # Skip empty transcriptions
+            if transcription:
+                target_list.append(transcription)
 
         # Join with spaces and apply IPA post-processing
         target_string = " ".join(target_list)
@@ -102,7 +102,7 @@ class TranslationProcessor:
         stop_on_first: bool = False,
     ) -> tuple[bool, list[str]]:
         """
-        Verify translation against expected outputs.
+        Verify transcription against expected outputs.
 
         Args:
             entries: List of VerifyEntry objects with word/phonemes pairs.
@@ -114,13 +114,13 @@ class TranslationProcessor:
         errors: list[str] = []
 
         for entry in entries:
-            translated = self.translate(entry.word)
-            translated_str = " ".join(translated)
+            transcribed = self.transcribe(entry.word)
+            transcribed_str = " ".join(transcribed)
             expected = entry.phonemes
 
-            if translated_str != expected:
+            if transcribed_str != expected:
                 error_msg = (
-                    f"'{entry.word}' -> '{translated_str}' "
+                    f"'{entry.word}' -> '{transcribed_str}' "
                     f"(expected: '{expected}')"
                 )
                 errors.append(error_msg)
