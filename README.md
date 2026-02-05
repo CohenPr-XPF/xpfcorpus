@@ -130,11 +130,11 @@ Use `xpfcorpus list` or `available_languages()` for the full list.
 If you use this package in your research, please cite the XPF Corpus:
 
 ```bibtex
-@misc{xpf_corpus,
-  title={The Cross-linguistic Phonological Frequencies (XPF) Corpus},
-  author={Cohen Priva, Uriel and Gleason, Emily},
-  year={2022},
-  url={https://cohenpr-xpf.github.io/XPF/}
+@Manual{XPF2021manual,
+  author={Cohen Priva, Uriel and Strand, Emily and Yang, Shiying and Mizgerd, William and Creighton, Abigail and Bai, Justin and Mathew, Rebecca and Shao, Allison and Schuster, Jordan and Wiepert, Daniela},
+  title = 	 {The Cross-linguistic Phonological Frequencies (XPF) Corpus manual},
+  year = 	 {2021},
+  note =         {Accessible online, \url{https://cohenpr-xpf.github.io/XPF/manual/xpf_manual.pdf}}
 }
 ```
 
