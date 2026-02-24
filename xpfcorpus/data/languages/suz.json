@@ -8,10 +8,10 @@
       "sounds": "ɾ|ɭ|l̪",
       "note": "/ʔ/ not always marked"
     },
-    "default_script": "latin"
+    "default_script": "devanagari"
   },
   "scripts": {
-    "latin": {
+    "devanagari": {
       "verify": [
         {
           "word": "मेकोपुकी",

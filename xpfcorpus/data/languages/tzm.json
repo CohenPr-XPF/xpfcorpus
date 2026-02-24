@@ -7,9 +7,369 @@
     "compromised": {
       "sounds": "l̪|l̪ˤ|ʒ|ʒˀ"
     },
-    "default_script": "latin"
+    "default_script": "tifinagh"
   },
   "scripts": {
+    "tifinagh": {
+      "verify": [
+        {
+          "word": "ⴰⴷ",
+          "phonemes": "a d̪",
+          "comment": "<ⴰ>; <ⴷ>"
+        },
+        {
+          "word": "ⵍⵎⵖⵔⵉⴱ",
+          "phonemes": "l̪ m ɣ r̪ i b",
+          "comment": "<ⵍ>; <ⵎ>; <ⵖ>; <ⵔ>; <ⵉ>; <ⴱ>"
+        },
+        {
+          "word": "ⵉⴳ",
+          "phonemes": "i ɡ",
+          "comment": "<ⴳ>"
+        },
+        {
+          "word": "ⵓⵎⴰⴹⴰⵍ",
+          "phonemes": "u m a d̪ˤ a l̪",
+          "comment": "<ⵓ>; <ⴹ>"
+        },
+        {
+          "word": "ⴷⴻⴳ",
+          "phonemes": "d̪ i ɡ",
+          "comment": "<ⴻ>"
+        },
+        {
+          "word": "ⵉⵣⵔⴼⴰⵏ",
+          "phonemes": "i z̪ r̪ f a n̪",
+          "comment": "<ⵣ>; <ⴼ>; <ⵏ>"
+        },
+        {
+          "word": "ⴽⵔⴰ",
+          "phonemes": "k r̪ a",
+          "comment": "<ⴽ>"
+        },
+        {
+          "word": "ⴱⴰⵀⵔⴰ",
+          "phonemes": "b a h r̪ a",
+          "comment": "<ⵀ>"
+        },
+        {
+          "word": "ⵃⵓⵎⴰ",
+          "phonemes": "ħ u m a",
+          "comment": "<ⵃ>"
+        },
+        {
+          "word": "ⵜⴰⵄⵔⴰⴱⵜ",
+          "phonemes": "t̪ a ʕ r̪ a b t̪",
+          "comment": "<ⵜ>; <ⵄ>"
+        },
+        {
+          "word": "ⵉⵅⴼ",
+          "phonemes": "i x f",
+          "comment": "<ⵅ>"
+        },
+        {
+          "word": "ⴰⵎⵇⵔⴰⵏ",
+          "phonemes": "a m q r̪ a n̪",
+          "comment": "<ⵇ>"
+        },
+        {
+          "word": "ⵊⴰⵔ",
+          "phonemes": "ʒ a r̪",
+          "comment": "<ⵊ>"
+        },
+        {
+          "word": "ⵜⵖⵓⵕⵉⵡⵉⵏ",
+          "phonemes": "t̪ ɣ u r̪ˤ i w i n̪",
+          "comment": "<ⵕ>; <ⵡ>"
+        },
+        {
+          "word": "ⴰⴷⵍⵙⴰⵏ",
+          "phonemes": "a d̪ l̪ s̪ a n̪",
+          "comment": "<ⵙ>"
+        },
+        {
+          "word": "ⴰⵟⴰⵙ",
+          "phonemes": "a t̪ˤ a s̪",
+          "comment": "<ⵟ>"
+        },
+        {
+          "word": "ⴰⵟⵟⴰⵚ",
+          "phonemes": "a t̪ˤ ː a s̪ˤ",
+          "comment": "<ⵚ>"
+        },
+        {
+          "word": "ⵎⴰⵛⴰ",
+          "phonemes": "m a ʃ a",
+          "comment": "<ⵛ>"
+        },
+        {
+          "word": "ⴰⵢ",
+          "phonemes": "a j",
+          "comment": "<ⵢ>"
+        },
+        {
+          "word": "ⵉⵥⵍⵉⵏ",
+          "phonemes": "i z̪ˤ l̪ i n̪",
+          "comment": "<ⵥ>"
+        },
+        {
+          "word": "ⴰⴳⵯⵏⵙⴰⵏ",
+          "phonemes": "a ɡʷ n̪ s̪ a n̪",
+          "comment": "<ⴳⵯ>"
+        },
+        {
+          "word": "ⴰⴽⵯ",
+          "phonemes": "a kʷ",
+          "comment": "<ⴽⵯ>"
+        },
+        {
+          "word": "ⵓⵙⴳⴳⵯⴰⵙ",
+          "phonemes": "u s̪ ɡʷ ː a s̪"
+        },
+        {
+          "word": "ⴰⴽⴽⵯ",
+          "phonemes": "a kʷ ː"
+        },
+        {
+          "word": "ⵜⵓⵙⵙⵏⴰ",
+          "phonemes": "t̪ u s̪ ː n̪ a"
+        },
+        {
+          "word": "ⵎⴰⵕⵕⴰ",
+          "phonemes": "m a r̪ˤ ː a"
+        },
+        {
+          "word": "ⵉⵊⵊ",
+          "phonemes": "i ʒ ː"
+        },
+        {
+          "word": "ⵉⵇⵇⴰⵏ",
+          "phonemes": "i q ː a n̪"
+        },
+        {
+          "word": "ⵉⵍⵍⴰ",
+          "phonemes": "i l̪ ː a"
+        },
+        {
+          "word": "ⵖⵖⴰⵔⵏ",
+          "phonemes": "ɣ ː a r̪ n̪"
+        }
+      ],
+      "rules": {
+        "classes": {
+          "gem": "(b|ɡ|d̪|d̪ˤ|f|k|h|ħ|ʕ|x|q|ʒ|l̪|m|n̪|r̪|r̪ˤ|ɣ|s̪|s̪ˤ|ʃ|t̪|t̪ˤ|w|j|z̪|z̪ˤ)",
+          "lab": "[kɡqxɣ]",
+          "phar": "(d̪|r̪|s̪|t̪|z̪)"
+        },
+        "sub": [
+          {
+            "from": "ⴰ",
+            "to": "a",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴱ",
+            "to": "b",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴳ",
+            "to": "ɡ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴷ",
+            "to": "d̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴹ",
+            "to": "d̪ˤ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴻ",
+            "to": "i",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴼ",
+            "to": "f",
+            "weight": 1.0
+          },
+          {
+            "from": "ⴽ",
+            "to": "k",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵀ",
+            "to": "h",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵃ",
+            "to": "ħ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵄ",
+            "to": "ʕ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵅ",
+            "to": "x",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵇ",
+            "to": "q",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵉ",
+            "to": "i",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵊ",
+            "to": "ʒ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵍ",
+            "to": "l̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵎ",
+            "to": "m",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵏ",
+            "to": "n̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵓ",
+            "to": "u",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵔ",
+            "to": "r̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵕ",
+            "to": "r̪ˤ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵖ",
+            "to": "ɣ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵙ",
+            "to": "s̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵚ",
+            "to": "s̪ˤ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵛ",
+            "to": "ʃ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵜ",
+            "to": "t̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵟ",
+            "to": "t̪ˤ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵡ",
+            "to": "w",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵢ",
+            "to": "j",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵣ",
+            "to": "z̪",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵥ",
+            "to": "z̪ˤ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵯ",
+            "to": "ʷ",
+            "weight": 1.0
+          },
+          {
+            "from": "ⵯ",
+            "to": "@",
+            "weight": 5.0,
+            "precede": "^",
+            "follow": "$",
+            "comment": "two unattested occurrences of diacritic"
+          },
+          {
+            "from": "-",
+            "to": "",
+            "weight": 2.0
+          }
+        ],
+        "ipasub": [
+          {
+            "from": "({lab}) ʷ",
+            "to": "\\1ʷ",
+            "weight": 2.0,
+            "comment": "removes space between labialized consonants and labial marker"
+          },
+          {
+            "from": "({gem}) \\1",
+            "to": "\\1 ː",
+            "weight": 3.0,
+            "comment": "geminate consonants"
+          },
+          {
+            "from": "({lab}) \\1 ʷ",
+            "to": "\\1ʷ ː",
+            "weight": 4.0,
+            "comment": "fixes labialized geminates"
+          },
+          {
+            "from": "({phar}) \\1ˤ",
+            "to": "\\1ˤ ː",
+            "weight": 5.0,
+            "comment": "fixes pharyngealized geminates"
+          },
+          {
+            "from": " ʷ ",
+            "to": " @ ",
+            "weight": 1.0,
+            "comment": "two unattested occurrences of diacritic"
+          }
+        ]
+      }
+    },
     "latin": {
       "verify": [
         {

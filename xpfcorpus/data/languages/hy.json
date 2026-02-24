@@ -4,10 +4,10 @@
     "name": "Armenian",
     "family": "Indo-European,Armenian",
     "macroarea": "Eurasia",
-    "default_script": "latin"
+    "default_script": "armenian"
   },
   "scripts": {
-    "latin": {
+    "armenian": {
       "verify": [
         {
           "word": "ազատ",

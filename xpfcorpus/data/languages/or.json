@@ -7,10 +7,10 @@
     "compromised": {
       "note": "ambiguous transcription of diacritics; diacritics not always marked"
     },
-    "default_script": "latin"
+    "default_script": "odia"
   },
   "scripts": {
-    "latin": {
+    "odia": {
       "verify": [
         {
           "word": "ଅବସ୍ଥିତ",

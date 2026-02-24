@@ -4,10 +4,10 @@
     "name": "Korean",
     "family": "Language Isolate",
     "macroarea": "Eurasia",
-    "default_script": "latin"
+    "default_script": "hangul"
   },
   "scripts": {
-    "latin": {
+    "hangul": {
       "verify": [
         {
           "word": "밥",

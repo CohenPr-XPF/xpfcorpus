@@ -7,10 +7,10 @@
     "compromised": {
       "sounds": "n|n̪"
     },
-    "default_script": "latin"
+    "default_script": "malayalam"
   },
   "scripts": {
-    "latin": {
+    "malayalam": {
       "verify": [
         {
           "word": "ഞാൻ",

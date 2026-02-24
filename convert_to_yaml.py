@@ -79,26 +79,76 @@ def detect_script_from_content(file_path: Path) -> str:
         return "unknown"
 
     # Count characters in different script ranges
-    cyrillic_count = 0
-    hebrew_count = 0
-    arabic_count = 0
+    script_counts = {
+        "cyrillic": 0,
+        "hebrew": 0,
+        "arabic": 0,
+        "greek": 0,
+        "armenian": 0,
+        "georgian": 0,
+        "devanagari": 0,
+        "kannada": 0,
+        "tamil": 0,
+        "telugu": 0,
+        "malayalam": 0,
+        "sinhala": 0,
+        "odia": 0,
+        "thaana": 0,
+        "hangul": 0,
+        "tifinagh": 0,
+    }
     latin_count = 0
-    greek_count = 0
 
     for char in content:
         cp = ord(char)
         # Cyrillic: U+0400–U+04FF, U+0500–U+052F
         if 0x0400 <= cp <= 0x052F:
-            cyrillic_count += 1
+            script_counts["cyrillic"] += 1
         # Hebrew: U+0590–U+05FF
         elif 0x0590 <= cp <= 0x05FF:
-            hebrew_count += 1
+            script_counts["hebrew"] += 1
         # Arabic: U+0600–U+06FF, U+0750–U+077F
         elif 0x0600 <= cp <= 0x06FF or 0x0750 <= cp <= 0x077F:
-            arabic_count += 1
+            script_counts["arabic"] += 1
+        # Thaana: U+0780–U+07BF
+        elif 0x0780 <= cp <= 0x07BF:
+            script_counts["thaana"] += 1
         # Greek: U+0370–U+03FF
         elif 0x0370 <= cp <= 0x03FF:
-            greek_count += 1
+            script_counts["greek"] += 1
+        # Armenian: U+0530–U+058F
+        elif 0x0530 <= cp <= 0x058F:
+            script_counts["armenian"] += 1
+        # Georgian: U+10A0–U+10FF, U+2D00–U+2D2F
+        elif 0x10A0 <= cp <= 0x10FF or 0x2D00 <= cp <= 0x2D2F:
+            script_counts["georgian"] += 1
+        # Devanagari: U+0900–U+097F
+        elif 0x0900 <= cp <= 0x097F:
+            script_counts["devanagari"] += 1
+        # Kannada: U+0C80–U+0CFF
+        elif 0x0C80 <= cp <= 0x0CFF:
+            script_counts["kannada"] += 1
+        # Tamil: U+0B80–U+0BFF
+        elif 0x0B80 <= cp <= 0x0BFF:
+            script_counts["tamil"] += 1
+        # Telugu: U+0C00–U+0C7F
+        elif 0x0C00 <= cp <= 0x0C7F:
+            script_counts["telugu"] += 1
+        # Malayalam: U+0D00–U+0D7F
+        elif 0x0D00 <= cp <= 0x0D7F:
+            script_counts["malayalam"] += 1
+        # Sinhala: U+0D80–U+0DFF
+        elif 0x0D80 <= cp <= 0x0DFF:
+            script_counts["sinhala"] += 1
+        # Odia (Oriya): U+0B00–U+0B7F
+        elif 0x0B00 <= cp <= 0x0B7F:
+            script_counts["odia"] += 1
+        # Hangul: U+AC00–U+D7AF, U+1100–U+11FF, U+3130–U+318F
+        elif 0xAC00 <= cp <= 0xD7AF or 0x1100 <= cp <= 0x11FF or 0x3130 <= cp <= 0x318F:
+            script_counts["hangul"] += 1
+        # Tifinagh: U+2D30–U+2D7F
+        elif 0x2D30 <= cp <= 0x2D7F:
+            script_counts["tifinagh"] += 1
         # Basic Latin letters (excluding ASCII punctuation/digits)
         elif (0x0041 <= cp <= 0x005A) or (0x0061 <= cp <= 0x007A):
             latin_count += 1
@@ -108,15 +158,10 @@ def detect_script_from_content(file_path: Path) -> str:
 
     # Determine dominant script (excluding latin since it's often in comments/syntax)
     # We look for non-Latin scripts first
-    counts = [
-        (cyrillic_count, "cyrillic"),
-        (hebrew_count, "hebrew"),
-        (arabic_count, "arabic"),
-        (greek_count, "greek"),
-    ]
+    max_script = max(script_counts, key=script_counts.get)
+    max_count = script_counts[max_script]
 
     # If any non-Latin script has significant presence, use it
-    max_count, max_script = max(counts, key=lambda x: x[0])
     if max_count > 10:  # Threshold to avoid false positives from IPA symbols
         return max_script
 
@@ -379,7 +424,8 @@ def convert_language(
 
     if rules_path_2:
         script_name = extract_script_name(rules_path_2, lang_code, data_root)
-        script_names.append(script_name)
+        if script_name not in script_names:
+            script_names.append(script_name)
 
         rules_file = resolve_path(rules_path_2, data_root)
         verify_file = resolve_path(verify_path_2, data_root)

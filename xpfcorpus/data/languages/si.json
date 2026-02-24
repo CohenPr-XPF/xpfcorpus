@@ -4,10 +4,10 @@
     "name": "Sinhala",
     "family": "Indo-European,Indo-Iranian,Indo-Aryan,Sinhalese-Maldivian",
     "macroarea": "Eurasia",
-    "default_script": "latin"
+    "default_script": "sinhala"
   },
   "scripts": {
-    "latin": {
+    "sinhala": {
       "verify": [
         {
           "word": "ශ්‍රී",

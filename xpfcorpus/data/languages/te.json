@@ -4,10 +4,10 @@
     "name": "Telugu",
     "family": "Dravidian,South-Central,Telugu",
     "macroarea": "Eurasia",
-    "default_script": "latin"
+    "default_script": "telugu"
   },
   "scripts": {
-    "latin": {
+    "telugu": {
       "verify": [
         {
           "word": "అతి",

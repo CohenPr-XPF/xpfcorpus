@@ -4,10 +4,10 @@
     "name": "Georgian",
     "family": "Kartvelian,Karto-Zan,Georgian",
     "macroarea": "Eurasia",
-    "default_script": "latin"
+    "default_script": "georgian"
   },
   "scripts": {
-    "latin": {
+    "georgian": {
       "verify": [
         {
           "word": "ფური",

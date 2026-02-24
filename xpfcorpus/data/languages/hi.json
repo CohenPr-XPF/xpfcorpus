@@ -8,10 +8,10 @@
       "sounds": "æ|ɛ",
       "note": "conflation between nasal vowels and /Vn/ sequences"
     },
-    "default_script": "latin"
+    "default_script": "devanagari"
   },
   "scripts": {
-    "latin": {
+    "devanagari": {
       "verify": [
         {
           "word": "पालन",
