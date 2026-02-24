@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xpfcorpus"
-version = "0.1.0"
+version = "0.1.1"
 description = "XPF Corpus grapheme-to-phoneme transcriber"
 authors = [{name = "Uriel Cohen Priva", email = "uriel_cohen_priva@brown.edu"}]
 readme = "README.md"
