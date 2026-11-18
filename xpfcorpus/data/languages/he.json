@@ -1,0 +1,1093 @@
+{
+  "metadata": {
+    "code": "he",
+    "name": "Hebrew (Modern Israeli)",
+    "family": "Afro-Asiatic,Semitic,Central,Northwest,Canaanite",
+    "macroarea": "Eurasia",
+    "default_script": "hebrew",
+    "compromised": {
+      "note": "standard pointing does not mark whether a shva is pronounced (/e/) or silent; the rules decide it from the shape of the word, which is right for most words but not all (a meteg, U+05BD, forces a heard shva). Prefixes are recognized only when followed by | (as in וּ|מַיִם). Qamats qatan is read as /o/ only before a hataf qamats or when written with U+05C7; otherwise qamats is /a/."
+    }
+  },
+  "scripts": {
+    "hebrew": {
+      "rules": {
+        "classes": {
+          "V": "[ֱ-ׇֻ]",
+          "Vs": "[ְ-ׇֻ]",
+          "D": "ּ",
+          "RAFE": "ֿ",
+          "M": "ֽ",
+          "S": "֫",
+          "HOL": "ֹ",
+          "SHV": "ְ",
+          "PAT": "ַ",
+          "SIN": "ׂ",
+          "HQAM": "ֳ",
+          "HET": "ח",
+          "VAV": "ו",
+          "YOD": "י",
+          "L": "[א-ת]",
+          "AD": "[ְ-ׇֻ]?",
+          "NODAG": "[֑-ֻֽ-ׇ']*",
+          "ALLM": "[֑-ׇ'|]*",
+          "POSTV": "[ּֽֿׁׂ֫']*",
+          "NV": "(?![ְ-ׇֻֽ])",
+          "NVD": "(?![ְ-ׇֽ])",
+          "END": "[ֽ֫|]*$",
+          "NEND": "(?![ֽ֫|]*$)",
+          "GRSH": "[ְ-ׇֻ]?ּ?֫?'",
+          "MK": "[ֽ֫|]*",
+          "MATER": "(?:[וי][ֱ-ׇֻ]|וּ)"
+        },
+        "pre": [
+          {
+            "from": "׳",
+            "to": "'"
+          },
+          {
+            "from": "״",
+            "to": "\""
+          },
+          {
+            "from": "־",
+            "to": "-"
+          },
+          {
+            "from": "’",
+            "to": "'"
+          }
+        ],
+        "match": [
+          {
+            "from": "ֱ",
+            "to": "e"
+          },
+          {
+            "from": "ֲ",
+            "to": "a"
+          },
+          {
+            "from": "ֳ",
+            "to": "o"
+          },
+          {
+            "from": "ִ",
+            "to": "i"
+          },
+          {
+            "from": "ֵ",
+            "to": "e"
+          },
+          {
+            "from": "ֶ",
+            "to": "e"
+          },
+          {
+            "from": "ֹ",
+            "to": "o"
+          },
+          {
+            "from": "ֺ",
+            "to": "o"
+          },
+          {
+            "from": "ֻ",
+            "to": "u"
+          },
+          {
+            "from": "ׇ",
+            "to": "o"
+          },
+          {
+            "from": "ֽ",
+            "to": "e"
+          },
+          {
+            "from": "ּ",
+            "to": ""
+          },
+          {
+            "from": "ׁ",
+            "to": ""
+          },
+          {
+            "from": "ׂ",
+            "to": ""
+          },
+          {
+            "from": "-",
+            "to": ""
+          },
+          {
+            "from": "|",
+            "to": "+"
+          },
+          {
+            "from": "ֿ",
+            "to": ""
+          },
+          {
+            "from": "'",
+            "to": ""
+          },
+          {
+            "from": "\"",
+            "to": ""
+          },
+          {
+            "from": "ד",
+            "to": "d"
+          },
+          {
+            "from": "ט",
+            "to": "t"
+          },
+          {
+            "from": "ל",
+            "to": "l"
+          },
+          {
+            "from": "מ",
+            "to": "m"
+          },
+          {
+            "from": "ם",
+            "to": "m"
+          },
+          {
+            "from": "נ",
+            "to": "n"
+          },
+          {
+            "from": "ן",
+            "to": "n"
+          },
+          {
+            "from": "ס",
+            "to": "s"
+          },
+          {
+            "from": "ק",
+            "to": "k"
+          },
+          {
+            "from": "ר",
+            "to": "ᴚ"
+          },
+          {
+            "from": "ת",
+            "to": "t"
+          },
+          {
+            "from": "ף",
+            "to": "f"
+          }
+        ],
+        "sub": [
+          {
+            "from": "֫",
+            "to": "ˈ<<",
+            "weight": 3.0,
+            "precede": "[ֱ-ׇֻ]ּ?ֽ[ֿׁׂ]*",
+            "comment": "after a full vowel and a meteg, two tokens back"
+          },
+          {
+            "from": "֫",
+            "to": "ˈ<",
+            "weight": 2.0,
+            "precede": "[ְ-ׇֻ][ּֽֿׁׂ]*",
+            "comment": "after the letter's vowel (or a shva), one token back"
+          },
+          {
+            "from": "֫",
+            "to": "ˈ",
+            "weight": 1.0,
+            "comment": "no vowel mark in this letter — the mark stays where it is"
+          },
+          {
+            "from": "ְ",
+            "to": "e",
+            "weight": 6.0,
+            "precede": "^ו",
+            "follow": "(?!ּ?ֽ)",
+            "comment": "word-initial vav + shva is the conjunction — always /ve/"
+          },
+          {
+            "from": "ְ",
+            "to": "",
+            "weight": 2.0,
+            "follow": "{D}?{M}",
+            "comment": "a shva marked heard — the meteg emits its /e/"
+          },
+          {
+            "from": "ְ",
+            "to": "ə",
+            "weight": 1.0,
+            "comment": "any other shva — the placeholder ə, which the ipasub rules turn into e where it is heard and delete everywhere else"
+          },
+          {
+            "from": "ַ",
+            "to": "",
+            "weight": 9.0,
+            "precede": "[חע]",
+            "follow": "{D}?{END}",
+            "comment": "patah gnuva — het and ayin already emitted the fused /aħ/ or /aʕ/. He is not listed: it is silent, so its patah still sounds."
+          },
+          {
+            "from": "ַ",
+            "to": "a",
+            "weight": 1.0
+          },
+          {
+            "from": "ָ",
+            "to": "o",
+            "weight": 9.0,
+            "follow": "{POSTV}{L}{HQAM}",
+            "comment": "qamats qatan before a hataf qamats (צָהֳרַיִם)"
+          },
+          {
+            "from": "ָ",
+            "to": "a",
+            "weight": 1.0
+          },
+          {
+            "from": "א",
+            "to": "ʔ",
+            "weight": 6.0,
+            "follow": "{MK}{MATER}",
+            "comment": "alef is an onset before a vowel-bearing mater (גִּרְסָאוֹת)"
+          },
+          {
+            "from": "א",
+            "to": "",
+            "weight": 4.0,
+            "follow": "{NV}",
+            "comment": "em kri'a — a vowelless alef is silent for everyone (זֹאת, קָרָא)"
+          },
+          {
+            "from": "א",
+            "to": "ʔ",
+            "weight": 1.0
+          },
+          {
+            "from": "ע",
+            "to": "aʕ",
+            "weight": 9.0,
+            "follow": "{PAT}{END}",
+            "comment": "patah gnuva — the /a/ is heard BEFORE the ayin (לֹעַ)"
+          },
+          {
+            "from": "ע",
+            "to": "ʕ",
+            "weight": 1.0
+          },
+          {
+            "from": "ה",
+            "to": "",
+            "weight": 6.0,
+            "follow": "{PAT}?{D}?{END}",
+            "comment": "a word-final he is silent for everyone, mapiq or not (מוֹרֶה, אוֹתָהּ). Under a patah gnuva the patah still sounds, so גָּבוֹהַּ is ɡavoa — unlike het and ayin, which ARE pronounced there (שִׂיחַ → siaħ)."
+          },
+          {
+            "from": "ה",
+            "to": "h",
+            "weight": 1.0
+          },
+          {
+            "from": "ח",
+            "to": "aħ",
+            "weight": 9.0,
+            "follow": "{PAT}{END}",
+            "comment": "patah gnuva — the /a/ is heard BEFORE the het (שִׂיחַ)"
+          },
+          {
+            "from": "ח",
+            "to": "ħ",
+            "weight": 1.0
+          },
+          {
+            "from": "ב",
+            "to": "b",
+            "weight": 5.0,
+            "follow": "{AD}{D}"
+          },
+          {
+            "from": "ב",
+            "to": "v",
+            "weight": 4.0,
+            "follow": "{AD}{M}?{RAFE}",
+            "comment": "a rafe — the stem's own fricative, final"
+          },
+          {
+            "from": "ב",
+            "to": "vv",
+            "weight": 1.0,
+            "comment": "a placeholder fricative the prefix rules may harden"
+          },
+          {
+            "from": "כ",
+            "to": "k",
+            "weight": 5.0,
+            "follow": "{AD}{D}"
+          },
+          {
+            "from": "כ",
+            "to": "χ",
+            "weight": 4.0,
+            "follow": "{AD}{M}?{RAFE}",
+            "comment": "a rafe — the stem's own fricative, final"
+          },
+          {
+            "from": "כ",
+            "to": "χχ",
+            "weight": 1.0,
+            "comment": "a placeholder fricative the prefix rules may harden"
+          },
+          {
+            "from": "ך",
+            "to": "k",
+            "weight": 5.0,
+            "follow": "{AD}{D}"
+          },
+          {
+            "from": "ך",
+            "to": "χ",
+            "weight": 1.0
+          },
+          {
+            "from": "פ",
+            "to": "p",
+            "weight": 5.0,
+            "follow": "{AD}{D}"
+          },
+          {
+            "from": "פ",
+            "to": "f",
+            "weight": 4.0,
+            "follow": "{AD}{M}?{RAFE}",
+            "comment": "a rafe — the stem's own fricative, final"
+          },
+          {
+            "from": "פ",
+            "to": "ff",
+            "weight": 1.0,
+            "comment": "a placeholder fricative the prefix rules may harden"
+          },
+          {
+            "from": "ג",
+            "to": "dʒ",
+            "weight": 5.0,
+            "follow": "{GRSH}"
+          },
+          {
+            "from": "ג",
+            "to": "ɡ",
+            "weight": 1.0
+          },
+          {
+            "from": "ז",
+            "to": "ʒ",
+            "weight": 5.0,
+            "follow": "{GRSH}"
+          },
+          {
+            "from": "ז",
+            "to": "z",
+            "weight": 1.0
+          },
+          {
+            "from": "צ",
+            "to": "tʃ",
+            "weight": 5.0,
+            "follow": "{GRSH}"
+          },
+          {
+            "from": "צ",
+            "to": "ts",
+            "weight": 1.0
+          },
+          {
+            "from": "ץ",
+            "to": "tʃ",
+            "weight": 5.0,
+            "follow": "{GRSH}"
+          },
+          {
+            "from": "ץ",
+            "to": "ts",
+            "weight": 1.0
+          },
+          {
+            "from": "ש",
+            "to": "s",
+            "weight": 5.0,
+            "follow": "{AD}{D}?{SIN}"
+          },
+          {
+            "from": "ש",
+            "to": "ʃ",
+            "weight": 1.0
+          },
+          {
+            "from": "ו",
+            "to": "w",
+            "weight": 9.25,
+            "follow": "{GRSH}",
+            "comment": "ו׳ is /w/, as ג׳ is /dʒ/. marks.py writes it for a stem-initial וו (וואטסאפ), which is always /w/; a medial וו is ambiguous, so those words (טוויטר) get ו׳ from rules/vocalizations.tsv"
+          },
+          {
+            "from": "ו",
+            "to": "v",
+            "weight": 8.0,
+            "follow": "{AD}{D}?{MK}{VAV}",
+            "comment": "first of a double vav is the consonant (עִוּוּת, עָווֹן)"
+          },
+          {
+            "from": "ו",
+            "to": "v",
+            "weight": 7.0,
+            "precede": "{SHV}{POSTV}",
+            "follow": "{HOL}",
+            "comment": "after a shva, vav+holam is /vo/ not /o/ (לִגְוֹעַ)"
+          },
+          {
+            "from": "ו",
+            "to": "u",
+            "weight": 6.5,
+            "follow": "{D}{NV}",
+            "comment": "shuruk — vav+dagesh carrying no vowel of its own"
+          },
+          {
+            "from": "ו",
+            "to": "",
+            "weight": 6.0,
+            "follow": "{HOL}",
+            "comment": "holam male — the vav is a mater, the holam gives /o/"
+          },
+          {
+            "from": "ו",
+            "to": "",
+            "weight": 5.0,
+            "follow": "{NVD}{NEND}",
+            "comment": "a bare mid-word vav is a leftover mater (חֲתֻונָּה)"
+          },
+          {
+            "from": "ו",
+            "to": "v",
+            "weight": 1.0
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 5.5,
+            "follow": "{MK}{VAV}{END}",
+            "comment": "word-final -yv is /av/, the yod is silent (עַכְשָׁיו, סְתָיו)"
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 5.2,
+            "precede": "{YOD}{ALLM}",
+            "follow": "{NVD}{NEND}",
+            "comment": "ktiv male doubles the yod for a single consonant — חַיָּיל is χaˈjal. Hebrew has no /jj/, so the second one is silent."
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 5.1,
+            "precede": "{YOD}{NODAG}",
+            "follow": "{NVD}",
+            "comment": "the same word-finally (עֵינַיי ʕeˈnaj) — but only when the first yod carries no dagesh. A dagesh there is gemination and the final yod is the 1sg possessive, which IS pronounced: חַיַּי is ħaˈjaj, not ħaˈja."
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 5.0,
+            "precede": "ִ{POSTV}[|]?{VAV}?",
+            "follow": "{NVD}{NEND}",
+            "comment": "yod kri'a — a bare mater after hiriq (לִירוֹת). The optional vav covers ktiv male, where a leftover mater sits between them (אֲוִויר → ʔaˈviᴚ). The optional bar covers a prefix whose hiriq absorbed a stem-initial yod: בִּ|ירוּשָׁלַיִם is biᴚuʃaˈlajim."
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 4.8,
+            "precede": "ִ{POSTV}[|]?",
+            "follow": "{SHV}{D}?(?!ֽ)",
+            "comment": "the same yod pointed with a silent shva, as the local model writes it: מִיְּרוּשָׁלַיִם is miᴚuʃaˈlajim, וִ|יְסַרְבֵּל visaᴚˈbel. A heard shva (meteg) keeps the yod; so does a doubled יי, where the shva'd yod follows the bare mater rather than the hiriq: סִייְּמָה is sijma."
+          },
+          {
+            "from": "י",
+            "to": "",
+            "weight": 4.5,
+            "precede": "[^א]ֵ{POSTV}{VAV}?",
+            "follow": "{NVD}{NEND}",
+            "comment": "... and after tsere, EXCEPT alef+tsere which is /ej/ (רֵיחַ vs אֵיתָנוּת)"
+          },
+          {
+            "from": "י",
+            "to": "j",
+            "weight": 1.0
+          }
+        ],
+        "ipasub": [
+          {
+            "from": "(?<![^ ])([aeiou]) e ˈ<<",
+            "to": "ˈ \\1 e",
+            "weight": 50.1,
+            "comment": "the ole of a letter with a vowel and a meteg"
+          },
+          {
+            "from": "(?<![^ ])([aeiouə]) ˈ<",
+            "to": "ˈ \\1",
+            "weight": 50.0,
+            "comment": "the ole of a letter with a vowel, or a shva"
+          },
+          {
+            "from": "ˈ<+",
+            "to": "ˈ",
+            "weight": 49.9,
+            "comment": "any other — after aħ/aʕ, where the vowel token is fused"
+          },
+          {
+            "from": "^(?!.*ˈ)((?:.* )?)([aeiou])((?: (?:[^\\s+ˈaeiou]\\S*|\\+))* a[ħʕ])$",
+            "to": "\\1ˈ \\2\\3",
+            "weight": 45.45,
+            "option": "default_stress_penult",
+            "comment": "a patah gnuva never takes the stress: the syllable before it does (רוּחַ ˈᴚuaħ, שִׂיחַ ˈsiaħ)"
+          },
+          {
+            "from": "^(?!.*ˈ)((?:.* )?)([aeiou])( a)$",
+            "to": "\\1ˈ \\2\\3",
+            "weight": 45.44,
+            "option": "default_stress_penult",
+            "comment": "the same under a mapiq he, which is silent, so its patah follows a vowel directly (גָּבוֹהַּ ɡaˈvoa)"
+          },
+          {
+            "from": "^(?!.*ˈ)((?:.* )?)([aeiou])((?: (?:[^\\s+ˈaeiou]\\S*|\\+))*)$",
+            "to": "\\1ˈ \\2\\3",
+            "weight": 45.4,
+            "option": "default_stress",
+            "comment": "otherwise the last syllable — milra, the Hebrew default"
+          },
+          {
+            "from": "ʕ ə j(?= |$)",
+            "to": "ʕ a j",
+            "weight": 40.0,
+            "option": "ayin_before_yod",
+            "comment": "an ayin does not close a syllable before a yod: מַעְיָן maʕaˈjan, רַעְיוֹן ᴚaʕaˈjon. Ayin only — אַחְיָן is ʔaħˈjan"
+          },
+          {
+            "from": "^u ((?:ˈ )?)(?=(?:\\+ )?(?:b|vv|v|f|ff|p|m|w)(?: |$))(?=.*\\+)",
+            "to": "v \\1e ",
+            "weight": 39.0,
+            "option": "vav_prefix_ve",
+            "comment": "the conjunction is /ve/ where the pointing writes a shuruk before בומ״פ: וּ|מַיִם vemaˈjim. Needs the bar, which says the vav is the conjunction"
+          },
+          {
+            "from": "(b|vv|l) (ə|e) \\+ vv(?= |$)",
+            "to": "\\1 \\2 + b",
+            "weight": 38.0,
+            "option": "keep_stop_after_prefix",
+            "comment": "a stem keeps its stop after a ב/ל prefix: לְ|בֵית is lebet, not the pointed levet. A rafe (the stem's own fricative, from the pipeline) gives a plain v, which this leaves alone"
+          },
+          {
+            "from": "(b|vv|l) (ə|e) \\+ χχ(?= |$)",
+            "to": "\\1 \\2 + k",
+            "weight": 37.9,
+            "option": "keep_stop_after_prefix",
+            "comment": "the same for כ (לְ|כִתָּה lekiˈta)"
+          },
+          {
+            "from": "(b|vv|l) (ə|e) \\+ ff(?= |$)",
+            "to": "\\1 \\2 + p",
+            "weight": 37.8,
+            "option": "keep_stop_after_prefix",
+            "comment": "the same for פ (בְּ|פָרִיז bepaˈᴚiz)"
+          },
+          {
+            "from": "^(?=.*\\+)v ((?:ˈ )?)e ((?:\\+ )?)vv(?= |$)",
+            "to": "v \\1e \\2b",
+            "weight": 37.5,
+            "option": "keep_stop_after_prefix",
+            "comment": "and after the conjunction /ve/ before a labial: וּ|בֵית vebet. Not before other letters — וְ|כָתַבְתִּי is veχatavti"
+          },
+          {
+            "from": "^(?=.*\\+)v ((?:ˈ )?)e ((?:\\+ )?)ff(?= |$)",
+            "to": "v \\1e \\2p",
+            "weight": 37.4,
+            "option": "keep_stop_after_prefix",
+            "comment": "the same for פ (וּ|פֹה vepo)"
+          },
+          {
+            "from": "(?<= )vv(?= .*\\+)",
+            "to": "b",
+            "weight": 37.0,
+            "option": "bet_prefix_stop",
+            "comment": "a ב prefix behind another prefix keeps its stop: וּבַ|מַּיִם vebamaˈjim, not the pointed vevamajim"
+          },
+          {
+            "from": "(?<= )b ə(?= .*\\+)",
+            "to": "b e",
+            "weight": 36.9,
+            "option": "bet_prefix_stop",
+            "comment": "... and its vowel: וּבְ|בַת vebebat, וּבְ|כִתָּה vebekiˈta (with the stop alone this was uvkiˈta)"
+          },
+          {
+            "from": "χχ ə (a?ħ)(?= |$)",
+            "to": "k ə \\1",
+            "weight": 36.0,
+            "option": "kaf_before_het",
+            "comment": "a kaf hardens before a het rather than give /χχ/: הִכְחִיל hikˈχil. A het before a kaf does not (חָכָם)"
+          },
+          {
+            "from": "^([lmnᴚj]) ə(?= |$)",
+            "to": "\\1 e",
+            "weight": 30.0,
+            "option": "initial_shva",
+            "comment": "under a sonorant or yod (רְכִישָׁה ᴚeχiˈʃa)"
+          },
+          {
+            "from": "^(\\S+) ə (?=a?[ʔʕh](?: |$))",
+            "to": "\\1 e ",
+            "weight": 29.5,
+            "option": "initial_shva",
+            "comment": "before an alef, ayin or he (שְׁאֵלָה ʃeʔeˈla)"
+          },
+          {
+            "from": "^(k|χχ|l|b|vv|v) ə \\+",
+            "to": "\\1 e +",
+            "weight": 29.0,
+            "option": "initial_shva",
+            "comment": "under a one-letter prefix, ו כ ל ב (בְּ|בַיִת)"
+          },
+          {
+            "from": "\\+ ([lmnᴚj]) ə (?=(?:ˈ )?[^\\sˈ]+ (?:ˈ )?[^\\sˈ]+ (?:ˈ )?[^\\sˈ]+)",
+            "to": "+ \\1 e ",
+            "weight": 28.5,
+            "option": "initial_shva",
+            "comment": "a stem's sonorant, as for the word (הַ|יְּלָדִים)"
+          },
+          {
+            "from": "\\+ (\\S+) ə (?=a?[ʔʕh] (?:ˈ )?[^\\sˈ]+ (?:ˈ )?[^\\sˈ]+)",
+            "to": "+ \\1 e ",
+            "weight": 28.0,
+            "option": "initial_shva",
+            "comment": "a stem's shva before a guttural, as for the word"
+          },
+          {
+            "from": "ə((?: \\+)?) (\\S+) ə(?= \\S)",
+            "to": "ə\\1 \\2 e",
+            "weight": 27.0,
+            "option": "double_shva",
+            "comment": "of two shvas in a row the first closes a syllable and the second is heard (יִשְׁמְרוּ jiʃmeᴚu) — but not word-finally, where the two are a coda cluster (כָּתַבְתְּ katavt)"
+          },
+          {
+            "from": "(?<= )(\\S+) ə((?: \\+)?) \\1(?= |$)",
+            "to": "\\1 e\\2 \\1",
+            "weight": 26.0,
+            "option": "geminate_epenthesis",
+            "comment": "two copies of one consonant cannot cluster, so the cluster breaks: הִתְמוֹדְדוּ hitmodeˈdu, הִבַּטְתִּי hiˈbateti (ט against ת). A dagesh is plain gemination and is not broken: מִמְּךָ mimˈχa"
+          },
+          {
+            "from": "(?<= )b ə((?: \\+)?) vv(?= |$)",
+            "to": "b e\\1 vv",
+            "weight": 25.9,
+            "option": "geminate_epenthesis",
+            "comment": "the same letter twice is a collision even where the dagesh makes one a stop and the other a fricative: חִבְּבוּ ħibeˈvu"
+          },
+          {
+            "from": "(?<= )vv ə((?: \\+)?) b(?= |$)",
+            "to": "vv e\\1 b",
+            "weight": 25.85,
+            "option": "geminate_epenthesis",
+            "comment": "... the other way round"
+          },
+          {
+            "from": "(?<= )p ə((?: \\+)?) ff(?= |$)",
+            "to": "p e\\1 ff",
+            "weight": 25.8,
+            "option": "geminate_epenthesis",
+            "comment": "... and for פ"
+          },
+          {
+            "from": "(?<= )ff ə((?: \\+)?) p(?= |$)",
+            "to": "ff e\\1 p",
+            "weight": 25.75,
+            "option": "geminate_epenthesis",
+            "comment": "... both ways"
+          },
+          {
+            "from": "([aeiou]) d ə t(?= |$)",
+            "to": "\\1 d e t",
+            "weight": 25.5,
+            "option": "geminate_epenthesis",
+            "comment": "a /d/ closing a syllable before a /t/ is near enough a geminate to go the same way: מָדַדְתִּי maˈdadeti, לָמַדְתִּי laˈmadeti. Any other pair is sayable (סָבַבְתִּי saˈvavti)"
+          },
+          {
+            "from": "\\+ ([^\\s+ˈlmnᴚj][^\\s+ˈ]*) ə ([^\\s+ˈaeiou]+) ˈ ",
+            "to": "+ ˈ\\1 \\2 ",
+            "weight": 25.2,
+            "comment": "a stem that starts with a silent shva has a two-consonant onset, and the stress goes before both: הַ|שְּׁנַיִם haˈʃnajim. Not after a sonorant, which closes the prefix's syllable instead (שֶׁ|לְּךָ ʃelˈχa)"
+          },
+          {
+            "from": " ə(?= |$)",
+            "to": "",
+            "weight": 25.0,
+            "comment": "every shva no rule claimed is silent"
+          },
+          {
+            "from": "^ə(?: |$)",
+            "to": "",
+            "weight": 24.95,
+            "comment": "... the first token too, behind a silent letter"
+          },
+          {
+            "from": "(^| )(v|χ|f)\\2(?= |$)",
+            "to": "\\1\\2",
+            "weight": 24.9,
+            "comment": "a ב/כ/פ no prefix rule claimed is the fricative"
+          },
+          {
+            "from": "(?: \\+)+(?= |$)",
+            "to": "",
+            "weight": 24.5,
+            "comment": "the prefix bar has done its work"
+          },
+          {
+            "from": "^\\+(?: |$)",
+            "to": "",
+            "weight": 24.45,
+            "comment": "... the first token too"
+          },
+          {
+            "from": "^((?:[^aeiouˈ ][^ ˈ]* )+)ˈ ",
+            "to": "ˈ\\1",
+            "weight": 9.0,
+            "comment": "word-initial cluster — stress moves to the very front"
+          },
+          {
+            "from": "^([aeiou]) ˈ",
+            "to": "ˈ\\1",
+            "weight": 8.75,
+            "comment": "a word that starts with its stressed vowel — a lone shuruk וּ — has no onset to walk back over; the mark still goes first"
+          },
+          {
+            "from": "^ˈ ([aeiou])(?= |$)",
+            "to": "ˈ\\1",
+            "weight": 8.7,
+            "comment": "the same when the default stress put the mark before that first vowel"
+          },
+          {
+            "from": "(a[ħʕ]) ˈ",
+            "to": "ˈ\\1",
+            "weight": 8.5,
+            "comment": "a stressed patah gnuva is emitted as one /aħ/ or /aʕ/ token, so the mark lands after it; put it back in front (שִׂיחַ → siˈaħ)"
+          },
+          {
+            "from": "([^aeiouˈ ][^ ˈ]*) ˈ ",
+            "to": "ˈ\\1 ",
+            "weight": 8.0,
+            "comment": "otherwise stress moves left over one onset consonant"
+          },
+          {
+            "from": "a(ħ|ʕ)",
+            "to": "a \\1",
+            "weight": 3.0,
+            "comment": "a patah gnuva is emitted fused, because the vowel is heard before the consonant — but they are two segments, so split them once the stress rules have used the fused form"
+          },
+          {
+            "from": "(ˈ?[aeiou]) j$",
+            "to": "\\1j",
+            "weight": 4.0,
+            "comment": "a word-final yod is the offglide of a diphthong, not a phoneme of its own — שַׁי is ʃ+aj, where בַּיִת is b+a+j+i+t"
+          },
+          {
+            "from": "(ˈ?[aeiou]) j (?=[^aeiou])",
+            "to": "\\1j ",
+            "weight": 3.5,
+            "comment": "the same before a consonant (נַיְט najt)"
+          },
+          {
+            "from": "i j$",
+            "to": "i",
+            "weight": 5.0,
+            "comment": "a word-final yod after hiriq is not a separate glide"
+          }
+        ]
+      },
+      "verify": [
+        {
+          "word": "צַהַ״ל",
+          "phonemes": "ts a ˈh a l",
+          "comment": "raw gershayim ״ (U+05F4), folded by a pre rule"
+        },
+        {
+          "word": "תֵּל־אָבִיב",
+          "phonemes": "t e l ʔ a ˈv i v",
+          "comment": "raw maqaf ־ (U+05BE), folded by a pre rule"
+        },
+        {
+          "word": "גִ׳ירָפָה",
+          "phonemes": "dʒ i ᴚ a ˈf a",
+          "comment": "raw geresh ׳ (U+05F3), folded by a pre rule"
+        },
+        {
+          "word": "וַ'אטְסאַפּ",
+          "phonemes": "w a t s ˈʔ a p",
+          "comment": "watsʔap — ו׳ is /w/. The pipeline takes the shva off the ס (the loan's t-s cluster is its own), as loans.tsv says"
+        },
+        {
+          "word": "קְטִיפָה",
+          "phonemes": "k t i ˈf a",
+          "comment": "ktifa — an unmarked initial shva is silent"
+        },
+        {
+          "word": "שָׁלוֹם",
+          "phonemes": "ʃ a ˈl o m",
+          "comment": "shalom — holam male, the vav is a mater"
+        },
+        {
+          "word": "מוֹרֶה",
+          "phonemes": "m o ˈᴚ e",
+          "comment": "more — word-final he is silent"
+        },
+        {
+          "word": "זֹאת",
+          "phonemes": "ˈz o t",
+          "comment": "zot — a vowelless alef is silent"
+        },
+        {
+          "word": "גָּבוֹהַּ",
+          "phonemes": "ɡ a ˈv o a",
+          "comment": "gavoa — a final mapiq he is silent, its patah is not"
+        },
+        {
+          "word": "שִׂיחַ",
+          "phonemes": "ˈs i a ħ",
+          "comment": "siaħ — but a het under a patah gnuva IS heard, after the /a/"
+        },
+        {
+          "word": "לֹעַ",
+          "phonemes": "ˈl o a ʕ",
+          "comment": "loaʕ — and so is an ayin"
+        },
+        {
+          "word": "כָּתַב",
+          "phonemes": "k a ˈt a v",
+          "comment": "katav — the same letter, stop with a dagesh and fricative without"
+        },
+        {
+          "word": "מַלְכָּה",
+          "phonemes": "m a l ˈk a",
+          "comment": "malka — the dagesh is looked ahead to, past the vowel"
+        },
+        {
+          "word": "חׇכְמָה",
+          "phonemes": "ħ o χ ˈm a",
+          "comment": "ħoχma — qamats qatan is /o/, and an unmarked shva is silent"
+        },
+        {
+          "word": "מֶלֶךְ",
+          "phonemes": "m e ˈl e χ",
+          "comment": "meleχ — a final form is the letter it is"
+        },
+        {
+          "word": "שָׂם",
+          "phonemes": "ˈs a m",
+          "comment": "sam — the sin dot, against שָׁם ʃam"
+        },
+        {
+          "word": "צִפּוֹר",
+          "phonemes": "ts i ˈp o ᴚ",
+          "comment": "tsipoᴚ — the affricate is one segment"
+        },
+        {
+          "word": "מַתְסִיס",
+          "phonemes": "m a t ˈs i s",
+          "comment": "matsis — and here the same two sounds are two"
+        },
+        {
+          "word": "שַׁי",
+          "phonemes": "ˈʃ aj",
+          "comment": "ʃaj — a yod with no vowel after it is an offglide"
+        },
+        {
+          "word": "בַּיִת",
+          "phonemes": "b a ˈj i t",
+          "comment": "bajit — with one after it, it is a consonant"
+        },
+        {
+          "word": "יָדַעְתִּי",
+          "phonemes": "j a d a ʕ ˈt i",
+          "comment": "jadaʕti — an ayin closes a syllable quite happily"
+        },
+        {
+          "word": "מִתְגַּלְגְּֽלִים",
+          "phonemes": "m i t ɡ a l ɡ e ˈl i m",
+          "comment": "mitɡalɡelim — a meteg says this shva is heard"
+        },
+        {
+          "word": "מָדַדְֽתִּי",
+          "phonemes": "m a d a d e ˈt i",
+          "comment": "madadeti — a meteg written in, as the local model does"
+        },
+        {
+          "word": "הִבַּטְֽתִּי",
+          "phonemes": "h i b a t e ˈt i",
+          "comment": "hibateti — same, where the collision is ט against ת"
+        },
+        {
+          "word": "לְֽ|בֵּית",
+          "phonemes": "l e ˈb e t",
+          "comment": "lebet — a prefix bar is not a segment, and its dagesh stands"
+        },
+        {
+          "word": "וְֽבַּ|מַּיִם",
+          "phonemes": "v e b a m a ˈj i m",
+          "comment": "vebamajim — two prefixes, the metegs written in"
+        },
+        {
+          "word": "מָדַדְתִּי",
+          "phonemes": "m a d a d e ˈt i",
+          "comment": "madadeˈti — no ole, so the default stress is milra; the shva rules hear the d-t collision"
+        },
+        {
+          "word": "מָדַ֫דְתִּי",
+          "phonemes": "m a ˈd a d e t i",
+          "comment": "maˈdadeti — an ole (Nakdan's Acc1) fixes the stress before the shva rules add a syllable"
+        },
+        {
+          "word": "קְֽטִיפָה",
+          "phonemes": "k e t i ˈf a",
+          "comment": "ketiˈfa — a meteg written in is heard, whatever the rules would say"
+        },
+        {
+          "word": "רְכִישָׁה",
+          "phonemes": "ᴚ e χ i ˈʃ a",
+          "comment": "ᴚeχiˈʃa — a word-initial shva under a sonorant is heard"
+        },
+        {
+          "word": "הַ|יְּלָדִים",
+          "phonemes": "h a j e l a ˈd i m",
+          "comment": "hajelaˈdim — so is a stem's, behind the bar"
+        },
+        {
+          "word": "שֶׁ|לְּךָ",
+          "phonemes": "ʃ e l ˈχ a",
+          "comment": "ʃelˈχa — but not in a stem of two letters"
+        },
+        {
+          "word": "יִשְׁמְרוּ",
+          "phonemes": "j i ʃ m e ˈᴚ u",
+          "comment": "jiʃmeˈᴚu — the second of two shvas is heard"
+        },
+        {
+          "word": "כָּתַבְתְּ",
+          "phonemes": "k a ˈt a v t",
+          "comment": "kaˈtavt — not word-finally, where the two are a cluster"
+        },
+        {
+          "word": "הִתְמוֹדְדוּ",
+          "phonemes": "h i t m o d e ˈd u",
+          "comment": "hitmodeˈdu — two copies of a consonant break apart"
+        },
+        {
+          "word": "סָבַ֫בְתִּי",
+          "phonemes": "s a ˈv a v t i",
+          "comment": "saˈvavti — v-t is sayable; no vowel"
+        },
+        {
+          "word": "וּ|מַיִם",
+          "phonemes": "v e m a ˈj i m",
+          "comment": "vemaˈjim — the conjunction is /ve/ before a labial"
+        },
+        {
+          "word": "לְ|בֵית",
+          "phonemes": "l e ˈb e t",
+          "comment": "leˈbet — the stem keeps its stop after a ל prefix"
+        },
+        {
+          "word": "וּבְ|בַת",
+          "phonemes": "v e b e ˈb a t",
+          "comment": "vebeˈbat — a ב prefix behind another is /be/"
+        },
+        {
+          "word": "וְ|כָתַבְתִּי",
+          "phonemes": "v e χ a t a v ˈt i",
+          "comment": "veχatavˈti — the conjunction before a non-labial keeps no stop"
+        },
+        {
+          "word": "בְּ|פִֿיזִיקָה",
+          "phonemes": "b e f i z i ˈk a",
+          "comment": "befiziˈka — a rafe on the stem's פ is its own /f/"
+        },
+        {
+          "word": "הַ|שְּׁנַ֫יִם",
+          "phonemes": "h a ˈʃ n a j i m",
+          "comment": "haˈʃnajim — the stress goes before a stem-initial cluster"
+        },
+        {
+          "word": "הִכְחִיל",
+          "phonemes": "h i k ˈħ i l",
+          "comment": "hikˈħil — a kaf hardens before a het"
+        },
+        {
+          "word": "מַעְיָן",
+          "phonemes": "m a ʕ a ˈj a n",
+          "comment": "maʕaˈjan — an ayin does not close a syllable before a yod"
+        },
+        {
+          "word": "רוּחַ",
+          "phonemes": "ˈᴚ u a ħ",
+          "comment": "ˈᴚuaħ — the default stress skips a patah gnuva"
+        },
+        {
+          "word": "מָדַ֫דְתִּי",
+          "phonemes": "m a ˈd a d e t i",
+          "comment": "maˈdadeti — NFC input, the ole after the patah — canonical order is the convention"
+        },
+        {
+          "word": "סָבַ֫בְתִּי",
+          "phonemes": "s a ˈv a v t i",
+          "comment": "saˈvavti — NFC input"
+        },
+        {
+          "word": "הַ|שְּׁנַ֫יִם",
+          "phonemes": "h a ˈʃ n a j i m",
+          "comment": "haˈʃnajim — NFC input — dagesh, shin dot, then the ole"
+        },
+        {
+          "word": "כׇּל",
+          "phonemes": "ˈk o l",
+          "comment": "ˈkol — NFC input — the qamats qatan sorts with the vowels, before the dagesh"
+        },
+        {
+          "word": "הַשֶּׁ֫מֶשׁ",
+          "phonemes": "h a ˈʃ e m e ʃ",
+          "comment": "haˈʃemeʃ — NFC input — segol, dagesh, shin dot, ole on one letter"
+        },
+        {
+          "word": "שׁ֫וּק",
+          "phonemes": "ˈʃ u k",
+          "comment": "ˈʃuk — the ole on the onset before a shuruk — no vowel mark, so it stays"
+        },
+        {
+          "word": "ר֫וּחַ",
+          "phonemes": "ˈᴚ u a ħ",
+          "comment": "ˈᴚuaħ — the same, before a patah gnuva"
+        },
+        {
+          "word": "שִׂיחַ֫",
+          "phonemes": "s i ˈa ħ",
+          "comment": "siˈaħ — an ole on a patah gnuva stays after the fused aħ"
+        },
+        {
+          "word": "לוֹ֫",
+          "phonemes": "ˈl o",
+          "comment": "ˈlo — an ole on a holam-male vav moves before its /o/"
+        }
+      ]
+    }
+  }
+}

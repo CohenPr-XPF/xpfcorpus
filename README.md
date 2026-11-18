@@ -140,4 +140,6 @@ If you use this package in your research, please cite the XPF Corpus:
 
 ## License
 
-MIT
+The code is under the MIT License. The language data (`xpfcorpus/data/`) is
+under CC BY-NC-SA 4.0, the XPF Corpus's license, which excludes commercial
+use. See `LICENSE`.

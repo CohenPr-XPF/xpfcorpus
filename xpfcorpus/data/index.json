@@ -1208,5 +1208,11 @@
       "latin"
     ],
     "default": "latin"
+  },
+  "he": {
+    "scripts": [
+      "hebrew"
+    ],
+    "default": "hebrew"
   }
 }
