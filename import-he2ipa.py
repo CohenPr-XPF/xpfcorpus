@@ -46,8 +46,8 @@ NOTE = (
     "silent; the rules decide it from the shape of the word, which is right "
     "for most words but not all (a meteg, U+05BD, forces a heard shva). "
     "Prefixes are recognized only when followed by | (as in \u05d5\u05bc|\u05de\u05b7\u05d9\u05b4\u05dd). "
-    "Qamats qatan is read as /o/ only before a hataf qamats or when written "
-    "with U+05C7; otherwise qamats is /a/."
+    "Qamats qatan is read as /o/ only when written with U+05C7, before a "
+    "hataf qamats, or in the stem \u05db\u05dc (kol); otherwise qamats is /a/."
 )
 
 # Phoneme-side fields per rule type. Everything else is grapheme side.

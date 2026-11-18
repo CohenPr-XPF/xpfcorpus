@@ -6,7 +6,7 @@
     "macroarea": "Eurasia",
     "default_script": "hebrew",
     "compromised": {
-      "note": "standard pointing does not mark whether a shva is pronounced (/e/) or silent; the rules decide it from the shape of the word, which is right for most words but not all (a meteg, U+05BD, forces a heard shva). Prefixes are recognized only when followed by | (as in וּ|מַיִם). Qamats qatan is read as /o/ only before a hataf qamats or when written with U+05C7; otherwise qamats is /a/."
+      "note": "standard pointing does not mark whether a shva is pronounced (/e/) or silent; the rules decide it from the shape of the word, which is right for most words but not all (a meteg, U+05BD, forces a heard shva). Prefixes are recognized only when followed by | (as in וּ|מַיִם). Qamats qatan is read as /o/ only when written with U+05C7, before a hataf qamats, or in the stem כל (kol); otherwise qamats is /a/."
     }
   },
   "scripts": {
@@ -238,6 +238,14 @@
             "from": "ַ",
             "to": "a",
             "weight": 1.0
+          },
+          {
+            "from": "ָ",
+            "to": "o",
+            "weight": 9.5,
+            "precede": "(?:^|\\|)כ",
+            "follow": "{POSTV}ל[ֽ֫|]*(?:$|-)",
+            "comment": "the word כל is kol whatever qamats it is written with: כָּל, וְ|כָל, בְּ|כָל, כָּל־ (an exception — the plain qamats is how the word is usually pointed). Only the stem כל itself: כָּלָה is kaˈla."
           },
           {
             "from": "ָ",
@@ -1058,9 +1066,24 @@
           "comment": "haˈʃnajim — NFC input — dagesh, shin dot, then the ole"
         },
         {
-          "word": "כׇּל",
+          "word": "הַ|טׇּהֳרָה",
+          "phonemes": "h a t o h o ˈᴚ a",
+          "comment": "hatohoˈᴚa — qamats qatan and dagesh on one letter; the qamats qatan sorts with the vowels, before the dagesh"
+        },
+        {
+          "word": "כָּל",
           "phonemes": "ˈk o l",
-          "comment": "ˈkol — NFC input — the qamats qatan sorts with the vowels, before the dagesh"
+          "comment": "kol — the exception, written with a plain qamats"
+        },
+        {
+          "word": "וְ|כָל",
+          "phonemes": "v e ˈχ o l",
+          "comment": "veˈχol — behind a prefix too"
+        },
+        {
+          "word": "כָּלָה",
+          "phonemes": "k a ˈl a",
+          "comment": "kaˈla — only the stem כל is the exception"
         },
         {
           "word": "הַשֶּׁ֫מֶשׁ",
